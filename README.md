@@ -11,12 +11,28 @@ Four real packet captures, each tied to a specific bug or design decision from o
 | 3 | [LLDP discovery frames](PACKET-CAPTURES.md#entry-3--lldp-discovery-frames) | Raw TLVs matched against what `topology.py` actually parses, plus a verified explanation for why FortiGate's LLDP never crossed a SPAN capture |
 | 4 | [Blocked DMZ→Trusted recon](PACKET-CAPTURES.md#entry-4--blocked-dmz--trusted-reconnaissance-attempt) | Segmentation enforcement proven at the packet level — request in, no reply, ever |
 
-**Full writeup with timestamps, TLV breakdowns, screenshots, and the real troubleshooting story behind each capture: [PACKET-CAPTURES.md](PACKET-CAPTURES.md)**
+**Full writeup with timestamps, TLV breakdowns, and the real troubleshooting story behind each capture: [PACKET-CAPTURES.md](PACKET-CAPTURES.md)**
+
+## At a glance
+
+**HSRP failover — the actual cutover, captured:**
+![HSRP failover transition](screenshots/02-hsrp-failover/06-successful-failover-advertise-active-transition.png)
+`10.10.70.3` sends Advertise → Hello (state Active) → Gratuitous ARP for the VIP. Measured failover: **3.33 seconds**, from raw packet timestamps.
+
+**SSL-VPN — real TLS negotiation against the live portal:**
+![SSL-VPN portal](screenshots/01-ssl-vpn/01-portal-access-attempt-troubleshooting.png)
+Full TLS 1.3 handshake captured on `wan1`, including one from an unsolicited internet scanner hitting the intentionally exposed portal.
+
+**LLDP — the raw TLVs `topology.py` parses, matched frame-for-frame:**
+![LLDP TLV breakdown](screenshots/03-lldp/02-tlv-breakdown-detail-pane.png)
+
+**Blocked DMZ→Trusted recon — request in, zero replies:**
+![DMZ recon blocked](screenshots/04-dmz-recon/01-blocked-recon-request-no-reply.png)
 
 ## Repo structure
 
 ```
-PACKET-CAPTURES.md              full writeup, screenshots embedded inline
+PACKET-CAPTURES.md              full writeup, all screenshots embedded inline
 captures/
   ssl-vpn-handshake.pcap        entry 1
   hsrp-failover-cutover.pcapng  entry 2 — the cutover itself
@@ -30,7 +46,7 @@ screenshots/
   04-dmz-recon/
 ```
 
-Open any `.pcap`/`.pcapng` in Wireshark. Screenshots are referenced inline in `PACKET-CAPTURES.md` so the full story renders directly on GitHub without opening a single capture file.
+Open any `.pcap`/`.pcapng` in Wireshark.
 
 ## Related projects
 
