@@ -50,6 +50,7 @@ Open any `.pcap`/`.pcapng` in Wireshark.
 
 ## Related projects
 
+## Related
 - [Cherwood Health](https://cherwood.tarunc.com) — SSL-VPN, DMZ segmentation
-- HA/Failover Lab — HSRP
-- [Cherwood Network Solutions](https://itsolutions.tarunc.com) — LLDP / Topology Discovery
+- [HA/Failover Lab](https://failover.tarunc.com) — HSRP
+- [Cherwood Network Solutions](https://networksolutions.tarunc.com) — LLDP / Topology Discovery
