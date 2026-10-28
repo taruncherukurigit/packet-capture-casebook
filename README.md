@@ -1,6 +1,6 @@
 # Packet Capture Casebook
 
-Four real packet captures, each tied to a specific bug or design decision from other projects in the [Cherwood Corporation](https://cherwood.tarunc.com) portfolio — not a tutorial series, evidence that I can actually read what's on the wire.
+Four real packet captures, each tied to a specific bug or design decision from my other [home lab projects](https://taruncherukurigit.github.io/portfolio-page/) — not a tutorial series, evidence that I can actually read what's on the wire.
 
 ## Entries
 
@@ -49,8 +49,6 @@ screenshots/
 Open any `.pcap`/`.pcapng` in Wireshark.
 
 ## Related projects
-
-## Related
-- [Cherwood Health](https://cherwood.tarunc.com) — SSL-VPN, DMZ segmentation
-- [HA/Failover Lab](https://failover.tarunc.com) — HSRP
-- [Cherwood Network Solutions](https://networksolutions.tarunc.com) — LLDP / Topology Discovery
+- [Segmented Enterprise Network](https://github.com/taruncherukurigit/cherwood-health) — SSL-VPN, DMZ segmentation
+- [HSRP High-Availability Lab](https://github.com/taruncherukurigit/hsrp-failover-lab) — HSRP
+- [Python Network Automation](https://github.com/taruncherukurigit/network-automation-toolkit) — LLDP and topology discovery
